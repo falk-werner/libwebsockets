@@ -3,4 +3,4 @@ directory = libwebsockets-v4.0.13
 
 source_url = https://libwebsockets.org/git/libwebsockets/snapshot/libwebsockets-v4.0.13.zip
 source_filename = libwebsockets-v4.0.13.zip
-source_hash = cc233698e9eb6e354b1fc54d530e2172b35a990fa9741fa6c0622e47699ec491
+source_hash = 42b9301947b1571b5df4c63e777cd6711768a96d04211a69bfe0f572ef7473ca
