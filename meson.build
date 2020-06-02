@@ -729,7 +729,11 @@ lws_have_malloc_h = c_compiler.has_header('malloc.h')
 lws_have_pthread_h = c_compiler.has_header('pthread.h')
 lws_have_inttypes_h = c_compiler.has_header('inttypes.h')
 
-lws_have_libcap = c_compiler.find_library('cap', required: false).found()
+lws_libcap = c_compiler.find_library('cap', required: false)
+lws_have_libcap = lws_libcap.found()
+if lws_have_libcap
+    lws_dependencies += [lws_libcap]
+endif
 
 lws_have_uv_version_h = false
 lws_have_new_uv_version_h = false
