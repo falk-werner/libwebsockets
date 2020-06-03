@@ -543,17 +543,13 @@ endif
 # automatically
 
 zlib_dep = dependency('zlib', required: false)
+lws_dependencies += [zlib_dep]
 lws_with_zlib = zlib_dep.found()
-if zlib_dep.found()
-    lws_dependencies += [zlib_dep]
-endif
 
 if lws_with_ssl
     openssl_dep = dependency('openssl', required: false)
+    lws_dependencies += [openssl_dep]
     lws_with_ssl = openssl_dep.found()
-    if openssl_dep.found()
-        lws_dependencies += [openssl_dep]
-    endif
 endif
 
 
@@ -566,41 +562,31 @@ if lws_with_wolfssl
         lws_with_wolfssl = wolfssl_dep.found()
     endif
 
-    if wolfssl_dep.found()
-        lws_dependencies += [wolfssl_dep]
-    endif
+    lws_dependencies += [wolfssl_dep]
 endif
 
 if lws_with_libev
     libev_dep = dependency('libev', required: false)
+    lws_dependencies += [libev_dep]
     lws_with_libev = libev_dep.found()
-    if libev_dep.found()
-        lws_dependencies += [libev_dep]
-    endif
 endif
 
 if lws_with_libuv
     libuv_dep = dependency('libuv', required: false)
+    lws_dependencies += [libuv_dep]
     lws_with_libuv = libuv_dep.found()
-    if libuv_dep.found()
-        lws_dependencies += [libuv_dep]
-    endif
 endif
 
 if lws_with_sqlite3
     sqlite3_dep = dependency('sqlite3', required: false)
+    lws_dependencies += [sqlite3_dep]
     lws_with_sqlite3 = sqlite3_dep.found()
-    if sqlite3_dep.found()
-        lws_dependencies += [sqlite3_dep]
-    endif
 endif
 
 if lws_with_libevent
     libevent_dep = dependency('libevent', required: false)
+    lws_dependencies += [libevent_dep]
     lws_with_libevent = libevent_dep.found()
-    if libevent_dep.found()
-        lws_dependencies += [libevent_dep]
-    endif
 endif
 
 if lws_with_glib
